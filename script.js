@@ -48,8 +48,8 @@ function VisualTree(tree, animation){
     if(tree.right)
       this.rightEdge = drawEdge(pos, pos.add([(1 / Math.pow(2,depth))*height*40, 60]))
     
-    this.circle = new Path.Circle( { radius:20, strokeWidth:2, fillColor: 'white', strokeColor:'black', center: pos });
-    this.text = new PointText({ position: new Point(pos.x-8, pos.y+10), fontSize: '30px', fillColor: 'black', content:''+ tree.element});
+    this.circle = new Path.Circle( { radius:25, strokeWidth:3, fillColor: 'white', strokeColor:'black', center: pos });
+    this.text = new PointText({ position: new Point(pos.x-8, pos.y+13), fontSize: '26px', fillColor: 'black', content:''+ tree.element});
     this.text.bringToFront();
  
     view.update();
@@ -115,7 +115,7 @@ function postOrderTraverse(tree){
     return	  
            
   setTimeout(function() {  
-      tree.node.circle.strokeColor = 'red';
+      tree.node.circle.strokeColor = 'rgb(255, 183, 3)';
       view.update()
     }, 750*(time++)); 
 
@@ -123,8 +123,8 @@ function postOrderTraverse(tree){
   postOrderTraverse(tree.right)  
     
   setTimeout(function() { 
-      tree.node.circle.fillColor = 'black';
-      tree.node.text.fillColor = 'red'; 
+      tree.node.circle.fillColor = 'rgb(2, 48, 71)';
+      tree.node.text.fillColor = 'rgb(255, 183, 3)'; 
       document.getElementById("postorder").innerHTML += tree.element + ' ';
 
       view.update()
@@ -136,14 +136,14 @@ function inOrderTraverse(tree){
     return	  
           
   setTimeout(function() {  
-      tree.node.circle.strokeColor = 'red';
+      tree.node.circle.strokeColor = 'rgb(255, 183, 3)';
       view.update()
     }, 750*(time++)); 
 
   inOrderTraverse(tree.left)
     setTimeout(function() { 
-      tree.node.circle.fillColor = 'black';
-      tree.node.text.fillColor = 'red'; 
+      tree.node.circle.fillColor = 'rgb(2, 48, 71)';
+      tree.node.text.fillColor = 'rgb(255, 183, 3)'; 
       document.getElementById("inorder").innerHTML += tree.element + ' ';
       view.update()
     }, 750*(time++));
@@ -155,13 +155,13 @@ function preOrderTraverse(tree){
     return	  
          
   setTimeout(function() {  
-      tree.node.circle.strokeColor = 'red';
+      tree.node.circle.strokeColor = 'rgb(255, 183, 3)';
       view.update()
     }, 750*(time++)); 
 
     setTimeout(function() { 
-      tree.node.circle.fillColor = 'black';
-      tree.node.text.fillColor = 'red'; 
+      tree.node.circle.fillColor = 'rgb(2, 48, 71)';
+      tree.node.text.fillColor = 'rgb(255, 183, 3)'; 
       document.getElementById("preorder").innerHTML += tree.element + ' ';
       view.update()
     }, 750*(time++));
